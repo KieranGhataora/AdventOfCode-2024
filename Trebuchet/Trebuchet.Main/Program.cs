@@ -5,7 +5,7 @@ using Trebuchet.Services;
 var data = File.ReadAllLines("data/input.txt");
 
 var calibrationLineParser = new CalibrationLineParser();
-
-var calibrationValuesSum = data.Select(cl => calibrationLineParser.ParseLine(cl)).Sum();
+var x = data.Select(cl => calibrationLineParser.ParseLine(cl)).ToList();
+var calibrationValuesSum = x.Sum();
 
 Console.WriteLine(calibrationValuesSum);
