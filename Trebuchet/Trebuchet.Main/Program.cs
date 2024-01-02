@@ -1,3 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Console.WriteLine("Hello, World!");
+using Trebuchet.Services;
+
+var data = File.ReadAllLines("data/input.txt");
+
+var calibrationLineParser = new CalibrationLineParser();
+
+var calibrationValuesSum = data.Select(cl => calibrationLineParser.ParseLine(cl)).Sum();
+
+Console.WriteLine(calibrationValuesSum);
